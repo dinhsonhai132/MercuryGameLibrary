@@ -1,0 +1,32 @@
+import "IO"
+import "random.mer"
+
+func screen_init(a, b) do
+    ffi("init.dll", "init", [a, b])
+    return [a, b]
+end
+
+func screen_flip() do
+    ffi("init.dll", "flip", [])
+    return []
+end
+
+func screen_fill(a, b, c) do
+    ffi("init.dll", "fill_screen", [a, b, c])
+    return [a, b, c]
+end
+
+func screen_draw(a, b, c, d, e, f, g) do
+    ffi("init.dll", "draw_square", [a, b, c, d, e, f, g])
+    return [a, b, c, d]
+end
+
+func delay(a) do
+    ffi("init.dll", "sleep_ms", [a])
+    return [a]
+end
+
+func screen_quit() do
+    ffi("init.dll", "quit", [])
+    return []
+end

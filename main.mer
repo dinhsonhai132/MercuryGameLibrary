@@ -1,0 +1,29 @@
+include "MercuryGameLibrary.mer"
+
+screen_init(500, 500)
+
+width = 100
+height = 100
+
+x_pos = 10
+y_pos = 10
+
+cube_color = [0, 0, 0]
+
+while true do
+    let f = screen_fill(0, 200, 200)
+
+    screen_draw(x_pos, y_pos, width, height, cube_color[0], cube_color[1], cube_color[2])
+
+    screen_flip()
+
+    x_pos += 1
+    y_pos += 1
+    if x_pos == 500 - width then
+        x_pos = 0
+        y_pos = 0
+    end
+
+end
+
+screen_quit()
